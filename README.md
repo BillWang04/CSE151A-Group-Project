@@ -17,7 +17,7 @@ The next two models we were thinking about using are ridge regression and random
 
 After evaluating the model, we found that the model is ineffective and clearly underfitting the data. This indicates that our data isn't linear and we should introduce some non-linearity to our model to increase its performance and minimize the RMSE. We are also planning to explore the data more thoroughly to see if there are noisy features in our design matrix.
 
-####################################################################################################################################################################
+#####################################################################################################
 
 ### Model 2: Random Forest Regression with hyper parameter tuning and K-fold CV 
 For our second model, we used Random Forest Regression. After training our model, we evaluated its performance using the root mean squared error. Our second model has improved, decreasing the testing set’s RMSE to 4,127. The first model’s testing set was 7,242 which makes a difference of 3,116 RMSE between the 2 models. This decrease in error shows that our model has improved. We plotted the fitting graph in our notebook and found that our model continues to fall in the underfitting simple model region in the fitting graph. However, it has moved closer to the ideal range than that of the first model. 
