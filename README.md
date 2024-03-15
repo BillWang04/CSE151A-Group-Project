@@ -2,12 +2,18 @@
 
 link to notebook: https://colab.research.google.com/github/BillWang04/CSE151A-Group-Project/blob/main/project.ipynb
 
-### Plan for preprocessing:
+## Introduction
+
+## Methods
+
+### Data Exploration
+
+### Data Preprocessing
 
 We plan to preprocess our data by using some of the packages provided by Sklearn. First, we plan to add features to our data that we expect to be useful for our model's prediction. Some of the features are: `day_of_week`, `month`, and `class`. After that, we going to encode our categorical variable `airline` using *OneHotEncoder*. We also plan to standarize and normalize our **quantitative** data using the ***StandardScaler*** function and the ***MinMaxScaler*** function. We are standardizing and normalizing our data to make our variables look more standard and with respect to their respective mean and variance. This helps us avoid having very large/small weights due to the range of values for the input.
 
 
-### Model 1: Preprocessing, Training, Evaluation
+### Model 1: Linear Regression
 
 After training our model, we evaluated its performance using root mean squared error (RMSE) metric. Our model's performance on the training set was extremely weak, as we obtained an RMSE of about 7193. We then evaluated the model's performance on the test data and we obtained a similar score to the training set: an RMSE of 7242. We plotted the fitting graph in our notebook and found that our model falls in the underfitting simple model region in the fitting graph.
 
@@ -27,7 +33,23 @@ Our group performed hyper parameter tuning and K-fold cross validation. For hype
 
 After evaluating the model, we found that the model is improving but is still ineffective. It’s still underfitting the data. Introducing the non-linearity to our model did help but now we must focus on exploring the data to see if there is still some cleaning to do. Also, this could indicate that we can reexamine our hyper parameter tuning to see if it can be further improved for optimization. 
 
-### Plan for Model 3:
+### Model 3: Extreme Gradient Boosting Regression
 
-The plan for our third model is to implement ridge regression. This regularization technique can help mitigate our issues with underfitting and as well as any potential overfitting by penalizing large coefficient values. We also plan to change the destination and arrival cities to one hot encoding to better categorize and distinguish the different cities in binary forms. We also plan to change num_stops to binary and add a boolean feature to the weekend category. We also plan to change the month category to boolean. The purpose of these changes is to better categorize our data to produce a more accurate fit to predict our data.
+## Results
+
+## Discussion
+
+## Conclusion
+
+## Collaboration
+- Hillary Chang 
+- Kailey Wong
+- Alan Espinosa
+- Bill Wang
+- Nathan Ko
+- Philemon Putra
+- Royce Huang
+- Walter Wong
+- Ahmed Mostafa
+- Phiroze Duggal
 
