@@ -4,6 +4,8 @@ Project Notebook: https://colab.research.google.com/github/BillWang04/CSE151A-Gr
 
 ## Introduction
 
+Our project aims to predict flight prices using machine learning techniques to address multifaceted features, such as the variation in price amongst different airlines, the impact of last-minute bookings, the correlation between ticket prices and departure/arrival times, and the influence of source and destination cities on ticket pricings. This project offers valuable insights to both passengers and the airline industry, enabling passengers to make informed decisions and potentially saving money when buying plane tickets, as well as assisting airlines in pricing strategies. The development of accurate predictive models for flight prices promotes transparency, competition, and financial stability within air travel. Having a good predictive model for flight prices is important, as it allows consumers when booking flights, while also enabling airlines to optimize their pricing strategies accurately.
+
 ## Prior Milestone Submissions
 ##### Conclusion for Model 1:
 
@@ -317,6 +319,7 @@ We used a ColumnTransformer in a Pipeline to perform feature engineering on our 
 
 ## Conclusion
 
+In conclusion, our project has provided valuable insights into flight price prediction, emphasizing the importance of data analysis, feature engineering, and model selection in prediction models. There are areas where we could have taken a different approach for better outcomes. For example, our initial data exploration could have been more thorough, identifying noisy features and understanding the relationships between variables more deeply. In the preprocessing stage, while we employed standard techniques, we could have also looked into domain knowledge to enhance model performance. This would include feature engineering more meaningful variables when it comes to differing flights and flight tickets. Additionally, we could have experimented with more algorithms, instead of just linear regression, ridge regression, random forest regression, and extreme gradient boosting regression. We could have implemented a neural network with different activation functions to try to create a better predictive model. The biggest oversight for our modeling process was that the one-hot-encoded feature of class was by far the most significant feature when it came to predicting price. In the future, we would either keep the business and economy class datasets separate, or create a binary classifier to classify the two groups first if the class data is not given. Despite these potential improvements and overlooked aspects, our project still proved insightful and provided a valuable learning experience for all of us.
 
 ## Collaboration
 - Hillary Chang 
