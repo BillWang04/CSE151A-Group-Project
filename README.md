@@ -295,6 +295,10 @@ In many cases, the class of travel (business or economy) is one of the primary d
 
 ## Discussion
 
+### Exploratory Data Visualization
+
+TODO
+
 ### Data Preprocessing Part 1: Data Cleaning
 
 We used the business and economy DataFrames to make them suitable for feature engineering tasks. It performs a series of data cleaning and preprocessing operations on both DataFrames by applying the clean function to each of them individually. The clean function carries out various data transformations, such as removing unnecessary characters, converting data types, extracting relevant information from existing columns, and creating new columns based on the existing data.
@@ -317,6 +321,18 @@ The resulting cleaned_df contains all the rows from both the economy and busines
 
 We used a ColumnTransformer in a Pipeline to perform feature engineering on our cleaned data. The first line involves one hot encoding the categorical variables of airline and class. The airline variable is which airline that flight was for and the possible airlines in the dataset were Vistara, Air India, Indigo, GO FIRST, AirAsia, SpiceJet, StarAir, and Trujet. The class variable was simply whether the ticket was for business or economy class. The second line takes the logarithmic transformation of the time taken column. We performed this log transform because the distribution of the original data was skewed right and therefore the transformation more uniformly distributes the data. Finally, the last line is just to specify which features to keep as is, as the rest were going to be dropped. We kept departure time, arrival time, number of stops, and whether the flight was on the weekend as is.
 
+### Model 1
+
+TODO: describe process of creating model and results/error
+
+### Model 2
+
+TODO: describe process of creating model and results/error
+
+### Model 3
+
+TODO: describe process of creating model and results/error
+
 ## Conclusion
 
 In conclusion, our project has provided valuable insights into flight price prediction, emphasizing the importance of data analysis, feature engineering, and model selection in prediction models. There are areas where we could have taken a different approach for better outcomes. For example, our initial data exploration could have been more thorough, identifying noisy features and understanding the relationships between variables more deeply. In the preprocessing stage, while we employed standard techniques, we could have also looked into domain knowledge to enhance model performance. This would include feature engineering more meaningful variables when it comes to differing flights and flight tickets. Additionally, we could have experimented with more algorithms, instead of just linear regression, ridge regression, random forest regression, and extreme gradient boosting regression. We could have implemented a neural network with different activation functions to try to create a better predictive model. The biggest oversight for our modeling process was that the one-hot-encoded feature of class was by far the most significant feature when it came to predicting price. In the future, we would either keep the business and economy class datasets separate, or create a binary classifier to classify the two groups first if the class data is not given. Despite these potential improvements and overlooked aspects, our project still proved insightful and provided a valuable learning experience for all of us.
@@ -331,5 +347,5 @@ In conclusion, our project has provided valuable insights into flight price pred
 - Royce Huang
 - Walter Wong
 - Ahmed Mostafa
-- Phiroze Duggal
+- Phiroze Duggal TODO
 
