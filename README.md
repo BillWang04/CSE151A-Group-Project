@@ -324,7 +324,7 @@ This behavior might be due to the inherent limitations of linear regression mode
 
 ### Model 2
 
-The lower RMSE values for both the training and testing sets indicate that the Random Forest Regressor is performing better than the linear regression model in predicting flight prices. The Random Forest Regressor's ability to capture non-linear relationships and handle complex interactions between features might be contributing to its improved performance.
+The reason we chose a the Random Forest Regressor's is because of its ability to capture non-linear relationships and handle complex interactions between features might be contributing to its improved performance. The lower RMSE values for both the training and testing sets indicate that the Random Forest Regressor is performing better than the linear regression model in predicting flight prices. 
 
 
 ### Model 3
