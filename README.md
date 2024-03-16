@@ -34,7 +34,7 @@ Here are some examples of data explored and the methods we used to visualize the
 
 ![flights_airline](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/bd0a1949-1f78-4316-9ee5-33fd30a409f1)
 Example 1) Airline Vistara has the most flights compared to the other 8 airlines in our dataset. Air India has the second highest and Indigo has the third highest. A pie chart was used to visualize this.
-```
+```py
 plt.figure(figsize=(10, 15))
 airline_counts = cleaned_df['airline'].value_counts()
 plt.pie(airline_counts, labels=airline_counts.index, autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
@@ -43,7 +43,7 @@ plt.show()
 ```
 ![price_vs_day](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/41dc56cc-d42d-4da0-827a-1dca93ef9a60)
 Example 2) The ticket prices per day were all around the same. Saturday seems to have higher ticket prices. Ticket prices on Tuesday, Friday, and Sunday seem to have the highest outliers. A box plot was used to visualize this.
-```
+```py
 plt.figure(figsize=(10, 6))
 sns.boxplot(x='day_of_week', y='price', data=cleaned_df)
 plt.title('Price vs Day of the Week')
@@ -55,7 +55,7 @@ plt.show()
 ![price_by_airline](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/0eef445d-bd35-41e7-8a6a-ee6335d7bfbd)
 ![departure_vs_price](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/7911f417-67db-452b-a147-bc92cf95e78e)
 Example 3) For the attribute Time, we used a scatter plot and we see that flights departing between 11pm-5am are less common and cheaper than other departure times. 
-```
+```py
 plt.figure(figsize=(12, 8))
 sns.scatterplot(x='dep_time', y='price', data=cleaned_df, alpha=0.5)
 plt.title('Departure Time vs. Price')
@@ -66,7 +66,7 @@ plt.show()
 
 ![flights_by_day](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/9db492e9-e5fc-49a1-8d95-bf76c856f8d1)
 Example 4) For the attribute Days,  the count Each day has the same amount of flight data
- ```
+ ```py
 plt.figure(figsize=(10, 6))
 sns.countplot(x='day_of_week', data=cleaned_df)
 plt.title('Number of Flights by Day of the Week')
@@ -81,7 +81,7 @@ plt.show()
 
 #### Part 1: Cleaning
 
-```
+```py
 def clean(df, class_):
     def extract_stops(description):
         stops_match = re.search(r'(\d+)-?stop', description)
@@ -131,7 +131,7 @@ To datetime format and extracts the hour part, considering minutes >= 30 as the 
 Added class `Business` or `Economy` to each flight
 
 
-```
+```py
 cleaned_df = pd.concat([clean(economy, "economy"), clean(business, "business")])
 cleaned_df
 ```
@@ -146,7 +146,7 @@ The pd.concat function combines these two DataFrames into a single DataFrame, cl
 The resulting cleaned_df contains all the rows from both the economy and business class DataFrames, with the respective "class" column indicating whether the row belongs to the economy or business class.
 
 #### Part 2: Feature Engineering
-```
+```py
 prepoc = ColumnTransformer([
    ('airline', OneHotEncoder(handle_unknown='ignore'), ['airline', 'class']), #One Hot Encoding airline and class
    ('log', FunctionTransformer(lambda x: np.log(x + 0.001)), ['time_taken']), # Loging Time Taken
@@ -159,7 +159,7 @@ prepoc = ColumnTransformer([
 For our first model, we built a Linear regression model and checked its error with Root MSE. 
 We plotted a Model Complexity vs. Predictive Error plot to check where our model lies in respect to the ideal range for model complexity and to determine whether the model is underfitting or overfitting. 
 
-```
+```py
 pipe = Pipeline([
        ('prepoc', prepoc),
        ('pog', LinearRegression())
@@ -176,7 +176,7 @@ predictions = pipe.predict(X_test)
 
 ### Model 2: Random Forest Regression 
 For our second model, we built a Random Forest Regression model and implemented cross validation along with hyper parameter tuning. Also, we continued to use Root MSE. We used RandomizedSearchCV to perform hyperparameter tuning on the model. We plotted a Model Complexity vs. Predictive Error plot to check where our model lies in respect to the ideal range and to compare it with model 1. 
-```
+```py
 pipe = Pipeline([
        ('prepoc', prepoc),
        ('pog', RandomForestRegressor())
@@ -231,7 +231,7 @@ predictions = pipe.predict(X_test)
 
 ### Model 3: Extreme Gradient Boosting Regression
 For our third model, we built an Extreme Gradient Boosting Regressor model and continued to use Root MSE. We plotted a Model Complexity vs. Predictive Error plot to check where our model lies in respect to the ideal range for model complexity, to compare the model with the first and second model for improvement , and to determine whether the model is underfitting or overfitting. Since this was our final model, we decided to run a GridSearchCV to attempt to get the best hyperparameters.
-```
+```py
 pipe = Pipeline([
        ('prepoc', prepoc),
        ('pog', XGBRegressor(n_estimators=150, learning_rate=0.08, max_depth=20, random_state = 22))
