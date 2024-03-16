@@ -83,8 +83,6 @@ plt.show()
 
 #### Part 1: Cleaning
 
-
-
 ```py
 def clean(df, class_):
     def extract_stops(description):
@@ -159,7 +157,7 @@ prepoc = ColumnTransformer([
 ], remainder='drop')
 ```
 
-We used a ColumnTransformer in a Pipeline to perform feature engineering on our cleaned data. The first line involves one hot encoding the categorical variables of airline and class. The airline variable is which airline that flight was for and the possible airlines in the dataset were Vistara, Air India, Indigo, GO FIRST, AirAsia, SpiceJet, StarAir, and Trujet. The class variable was simply whether the ticket was for business or economy class. The second line takes the logarithmic transformation of the time taken column. We performed this log transform because the distribution of the original data was skewed right and therefore the transformation more uniformly distributes the data. Finally, the last line is just to specify which features to keep as is, as the rest were going to be dropped. We kept departure time, arrival time, number of stops, and whether the flight was on the weekend as is.
+We used a ColumnTransformer in a Pipeline to perform feature engineering on our cleaned data. The first line involves one hot encoding the categorical variables of airline and class. The airline variable is which airline that flight was for and the possible airlines in the dataset were Vistara, Air India, Indigo, GO FIRST, AirAsia, SpiceJet, StarAir, and Trujet. The class variable was simply whether the ticket was for business or economy class. The second line takes the logarithmic transformation of the time taken column. Finally, the last line is just to specify which features to keep as is, as the rest were going to be dropped. We kept departure time, arrival time, number of stops, and whether the flight was on the weekend as is.
 
 ### Model 1: Linear Regression
 
@@ -311,7 +309,11 @@ The resulting cleaned_df DataFrame is now structured and formatted in a way that
 
 ### Data Preprocessing Part 2:
 
-TODO
+We first decided to one-hot-encode the airline variables as we believed different airlines would have different pricing, as some airlines are on the more budget end while others are more luxury with more amenities. Then, we decided to one-hot-encode class as we were confident that whether a ticket was business or economy would play a significant role in determining the price.
+
+We then decided to perform a logarithmic transformation on the time taken feature (flight duration). We decided to do a log transform as much of the data was pretty right skewed. Since we are only using linear features, this allows the time taken column to be better fit.
+
+Finally, we decided to simply keep the departure time, arrival time, number of stops, and whether the flight was on the weekend as we believed these features are useful and look workable as is. The other features we dropped were mostly beacause we believed they did not play a huge role in determining price, or were collinear with another feature.
 
 ### Model 1
 The reason we created a linear model was to have baseline as a way to compare our results to the next two models.The linear regression model is struggling to accurately predict flight prices across the entire range of values. The high RMSE values suggest that the model's predictions are deviating significantly from the actual prices.
