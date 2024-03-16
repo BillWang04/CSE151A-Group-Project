@@ -1,0 +1,38 @@
+# Core Data Science Libraries
+numpy>=1.21.6
+pandas>=1.4.3
+scikit-learn>=1.1.1
+scipy>=1.9.3
+matplotlib>=3.6.2
+seaborn>=0.12.1
+plotly>=5.11.0
+
+# Machine Learning Libraries
+xgboost>=1.7.1
+lightgbm>=3.3.3
+catboost>=1.1.1
+shap>=0.41.0
+
+# Deep Learning Libraries
+tensorflow>=2.10.0
+keras>=2.10.0
+
+# Deployment and Reproducibility
+jupyter>=1.0.0
+jupyter-lab>=3.5.0
+ipython>=8.7.0
+ipykernel>=6.19.2
+dvc>=2.16.2
+
+# Visualization
+ipywidgets>=8.0.2
+ipyleaflet>=0.17.0
+ipympl>=0.9.1
+
+# Version Control
+git>=2.38.1
+
+# Environment Management
+pip>=22.3.1
+conda>=22.11.1
+mamba>=1.2.0
