@@ -336,13 +336,13 @@ After noticing the dramatic improvement from linear regression to random forest,
 In conclusion, our project has provided valuable insights into flight price prediction, emphasizing the importance of data analysis, feature engineering, and model selection in prediction models. There are areas where we could have taken a different approach for better outcomes. For example, our initial data exploration could have been more thorough, identifying noisy features and understanding the relationships between variables more deeply. In the preprocessing stage, while we employed standard techniques, we could have also looked into domain knowledge to enhance model performance. This would include feature engineering more meaningful variables when it comes to differing flights and flight tickets. Additionally, we could have experimented with more algorithms, instead of just linear regression, ridge regression, random forest regression, and extreme gradient boosting regression. We could have implemented a neural network with different activation functions to try to create a better predictive model. The biggest oversight for our modeling process was that the one-hot-encoded feature of class was by far the most significant feature when it came to predicting price. In the future, we would either keep the business and economy class datasets separate, or create a binary classifier to classify the two groups first if the class data is not given. Despite these potential improvements and overlooked aspects, our project still proved insightful and provided a valuable learning experience for all of us.
 
 ## Collaboration
-- Hillary Chang: made visualizations, helped with the writeup
+- Hillary Chang: Made visualizations, helped with the writeup
 - Kailey Wong: Assisted with performing initial data exploration and visualizations, brainstormed and created model and performance visualizations.
 - Alan Espinosa: Helped with preprocessing the data, updated the ReadMe file by describing how we built our second model and how well it performed compared to our first model. 
-- Bill Wang: Help Writing and evaluating all the models
-- Nathan Ko: 
+- Bill Wang: Helped implement all three models, feature engineering and synthesized the write-up.
+- Nathan Ko: Helped implement all three models, feature engineering and synthesized the write-up.
 - Philemon Putra: Helped with preprocessing the data, updated the ReadMe file by describing our ideas and plans for the third model.
 - Royce Huang: Assisted with preliminary exploratory data analysis in generating visualizations, and reviewed the initial abstract and research questions
-- Walter Wong:
+- Walter Wong: Helped implement all three models, feature engineering and synthesized the write-up.
 - Ahmed Mostafa: Cleaned the data, assisted in plotting the model performance plot, modified the readme, and helped in implementing the third model.
 - Phiroze Duggal: Helped with plotting the model performance plot, and helped in editing the readme
