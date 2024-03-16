@@ -83,11 +83,7 @@ plt.show()
 
 #### Part 1: Cleaning
 
-We used the business and economy DataFrames to make them suitable for feature engineering tasks. It performs a series of data cleaning and preprocessing operations on both DataFrames by applying the clean function to each of them individually. The clean function carries out various data transformations, such as removing unnecessary characters, converting data types, extracting relevant information from existing columns, and creating new columns based on the existing data.
 
-After cleaning and preprocessing the business and economy DataFrames separately, the code combines them into a single DataFrame called cleaned_df using the pd.concat function. This merged DataFrame contains all the rows from both the business and economy DataFrames, with an additional column "class" indicating whether a particular row belongs to the business or economy class.
-
-The resulting cleaned_df DataFrame is now structured and formatted in a way that makes it easier to perform feature engineering tasks, which typically involve creating new features or transforming existing features to better represent the underlying data patterns and relationships. The cleaned and merged DataFrame can be used as input for further data analysis, modeling, or machine learning pipelines.
 
 ```py
 def clean(df, class_):
@@ -121,22 +117,22 @@ def clean(df, class_):
     return df_copy
 ```
 
-`price`:  
-Price is currently in string format, replace the `,` with “” and turn into int  
-`flight_code`:  
-Grabs `ch_code` and `num_code` and combines the two columns into the flight code  
-`num_stops`:  
-Searches for a pattern like "X-stop" or "Xstop" in the description string in the ‘stop’ column. Attributes the number of stops for that flight  
-`time_taken`:   
-Converts `time_taken` column in original df to a float  
-`date`, `day_of_week`, `month`:  
-Convert `date` to a date_time object  
-Convert `day_of_week` to a date_time object  
-Convert `month` to a date_time object  
-`arriva_timel` and `departure_time`:
-To datetime format and extracts the hour part, considering minutes >= 30 as the next hour.  
-`class`:  
-Added class `Business` or `Economy` to each flight
+- `price`:  
+    - Price is currently in string format, replace the `,` with “” and turn into int  
+- `flight_code`:  
+    - Grabs `ch_code` and `num_code` and combines the two columns into the flight code  
+- `num_stops`:  
+    - Searches for a pattern like "X-stop" or "Xstop" in the description string in the ‘stop’ column. Attributes the number of stops for that flight  
+- `time_taken`:   
+    - Converts `time_taken` column in original df to a float  
+- `date`, `day_of_week`, `month`:  
+    - Convert `date` to a date_time object  
+    - Convert `day_of_week` to a date_time object  
+    - Convert `month` to a date_time object  
+- `arriva_timel` and `departure_time`:
+    - To datetime format and extracts the hour part, considering minutes >= 30 as the next hour.  
+- `class`:  
+    - Added class `Business` or `Economy` to each flight
 
 
 ```py
@@ -307,7 +303,11 @@ TODO
 
 ### Data Preprocessing Part 1: Data Cleaning
 
-TODO
+We used the business and economy DataFrames to make them suitable for feature engineering tasks. It performs a series of data cleaning and preprocessing operations on both DataFrames by applying the clean function to each of them individually. The clean function carries out various data transformations, such as removing unnecessary characters, converting data types, extracting relevant information from existing columns, and creating new columns based on the existing data.
+
+After cleaning and preprocessing the business and economy DataFrames separately, the code combines them into a single DataFrame called cleaned_df using the pd.concat function. This merged DataFrame contains all the rows from both the business and economy DataFrames, with an additional column "class" indicating whether a particular row belongs to the business or economy class.
+
+The resulting cleaned_df DataFrame is now structured and formatted in a way that makes it easier to perform feature engineering tasks, which typically involve creating new features or transforming existing features to better represent the underlying data patterns and relationships. The cleaned and merged DataFrame can be used as input for further data analysis, modeling, or machine learning pipelines.
 
 ### Data Preprocessing Part 2:
 
