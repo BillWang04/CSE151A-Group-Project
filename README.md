@@ -329,7 +329,7 @@ The reason we chose a the Random Forest Regressor's is because of its ability to
 
 ### Model 3
 
-TODO: describe process of creating model and results/error
+After noticing the dramatic improvement from linear regression to random forest, we decided to implement an XGBoost model to further improve our predictions. Our supposition was that XGBoost gives us more flexibility in hyperparameter tuning than random forest. XGBoost lets us specify the learning rate of our model along with the structure of the tree built for prediction. However, after building the model, we found that the performance of the model is pretty much the same as the random forest. Even after the hyperparameter tuning and using gridsearch to find the best hyperparameter, the model dealt no better results. We anticipate that the problem is from our features and the small size of our dataset as XGBoost stands out with larger datasets.
 
 ## Conclusion
 
