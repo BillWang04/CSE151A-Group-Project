@@ -297,7 +297,9 @@ In many cases, the class of travel (business or economy) is one of the primary d
 
 ### Exploratory Data Visualization
 
-TODO
+Through a meticulous exploratory data analysis, we gained invaluable insights into the  structure, quality, and  characteristics of our dataset. This comprehensive examination proved instrumental in identifying opportunities for feature engineering, enabling us to craft more robust and informative features for our machine learning models. One notable discovery during this process was the presence of numerous outliers with exorbitant prices, particularly on weekends (Friday, Saturday, and Sunday), despite the overall similarity in pricing patterns. Recognizing the potential significance of this observation, we strategically engineered a dedicated 'weekend' feature to capture and account for this nuanced behavior.
+
+Furthermore, our analysis delved into the distribution of data across different days, as we looked for any discernible patterns or disparities in flight operations. However, our findings revealed no substantial deviations, rendering additional feature engineering efforts in this regard unnecessary. Moreover, our exploration unveiled a notable concentration within the dataset, with the airlines Vistara and Air India dominating the majority of the observations and exhibiting the most extensive price distribution.
 
 ### Data Preprocessing Part 1: Data Cleaning
 
