@@ -83,6 +83,12 @@ plt.show()
 
 #### Part 1: Cleaning
 
+We used the business and economy DataFrames to make them suitable for feature engineering tasks. It performs a series of data cleaning and preprocessing operations on both DataFrames by applying the clean function to each of them individually. The clean function carries out various data transformations, such as removing unnecessary characters, converting data types, extracting relevant information from existing columns, and creating new columns based on the existing data.
+
+After cleaning and preprocessing the business and economy DataFrames separately, the code combines them into a single DataFrame called cleaned_df using the pd.concat function. This merged DataFrame contains all the rows from both the business and economy DataFrames, with an additional column "class" indicating whether a particular row belongs to the business or economy class.
+
+The resulting cleaned_df DataFrame is now structured and formatted in a way that makes it easier to perform feature engineering tasks, which typically involve creating new features or transforming existing features to better represent the underlying data patterns and relationships. The cleaned and merged DataFrame can be used as input for further data analysis, modeling, or machine learning pipelines.
+
 ```py
 def clean(df, class_):
     def extract_stops(description):
@@ -147,6 +153,7 @@ The pd.concat function combines these two DataFrames into a single DataFrame, cl
 
 The resulting cleaned_df contains all the rows from both the economy and business class DataFrames, with the respective "class" column indicating whether the row belongs to the economy or business class.
 
+
 #### Part 2: Feature Engineering
 ```py
 prepoc = ColumnTransformer([
@@ -155,6 +162,8 @@ prepoc = ColumnTransformer([
    ('test', FunctionTransformer(lambda x: x), ['dep_time', 'arr_time', 'num_stops', 'weekend']), # Keeping all of the values
 ], remainder='drop')
 ```
+
+We used a ColumnTransformer in a Pipeline to perform feature engineering on our cleaned data. The first line involves one hot encoding the categorical variables of airline and class. The airline variable is which airline that flight was for and the possible airlines in the dataset were Vistara, Air India, Indigo, GO FIRST, AirAsia, SpiceJet, StarAir, and Trujet. The class variable was simply whether the ticket was for business or economy class. The second line takes the logarithmic transformation of the time taken column. We performed this log transform because the distribution of the original data was skewed right and therefore the transformation more uniformly distributes the data. Finally, the last line is just to specify which features to keep as is, as the rest were going to be dropped. We kept departure time, arrival time, number of stops, and whether the flight was on the weekend as is.
 
 ### Model 1: Linear Regression
 
@@ -301,25 +310,11 @@ TODO
 
 ### Data Preprocessing Part 1: Data Cleaning
 
-We used the business and economy DataFrames to make them suitable for feature engineering tasks. It performs a series of data cleaning and preprocessing operations on both DataFrames by applying the clean function to each of them individually. The clean function carries out various data transformations, such as removing unnecessary characters, converting data types, extracting relevant information from existing columns, and creating new columns based on the existing data.
-
-After cleaning and preprocessing the business and economy DataFrames separately, the code combines them into a single DataFrame called cleaned_df using the pd.concat function. This merged DataFrame contains all the rows from both the business and economy DataFrames, with an additional column "class" indicating whether a particular row belongs to the business or economy class.
-
-The resulting cleaned_df DataFrame is now structured and formatted in a way that makes it easier to perform feature engineering tasks, which typically involve creating new features or transforming existing features to better represent the underlying data patterns and relationships. The cleaned and merged DataFrame can be used as input for further data analysis, modeling, or machine learning pipelines.
-
-The clean function is called twice, once for the economy class DataFrame and once for the business class DataFrame.
-The clean function takes the respective DataFrame (economy or business) and a string representing the class ("economy" or "business").
-It performs the necessary data cleaning and preprocessing steps, as defined in the clean function, and returns the cleaned DataFrame.
-The pd.concat function concatenates the two cleaned DataFrames along the row axis (vertically).
-clean(economy, "economy") returns the cleaned DataFrame for economy class flights.
-clean(business, "business") returns the cleaned DataFrame for business class flights.
-The pd.concat function combines these two DataFrames into a single DataFrame, cleaned_df.
-
-The resulting cleaned_df contains all the rows from both the economy and business class DataFrames, with the respective "class" column indicating whether the row belongs to the economy or business class.
+TODO
 
 ### Data Preprocessing Part 2:
 
-We used a ColumnTransformer in a Pipeline to perform feature engineering on our cleaned data. The first line involves one hot encoding the categorical variables of airline and class. The airline variable is which airline that flight was for and the possible airlines in the dataset were Vistara, Air India, Indigo, GO FIRST, AirAsia, SpiceJet, StarAir, and Trujet. The class variable was simply whether the ticket was for business or economy class. The second line takes the logarithmic transformation of the time taken column. We performed this log transform because the distribution of the original data was skewed right and therefore the transformation more uniformly distributes the data. Finally, the last line is just to specify which features to keep as is, as the rest were going to be dropped. We kept departure time, arrival time, number of stops, and whether the flight was on the weekend as is.
+TODO
 
 ### Model 1
 
