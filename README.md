@@ -263,13 +263,40 @@ grid_search.best_params_
 
 
 ## Results
+### Linear Testing
 ![linreg_testing](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/b0666319-9ef9-45b8-934b-4a8ec8530223)
 ![linreg_training](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/11f81634-016e-48c9-aece-458f5a501b81)
+
+The linear regression model is struggling to accurately predict flight prices across the entire range of values. The high RMSE values suggest that the model's predictions are deviating significantly from the actual prices.
+
+For the training set, the RMSE value of 7193.054746715674 indicates that, on average, the model's predictions deviate from the true prices by approximately $7,193. Similarly, for the testing set, the RMSE value of 7242.05710648803 suggests that the model's predictions deviate from the actual prices by around $7,242 on average.
+
+These high RMSE values could be attributed to the fact that the model is treating the flight prices as two distinct groups or clusters: one around $1,000 for economy flights and another around $5,000 for business flights. Instead of accurately predicting the individual prices, the model seems to be classifying or grouping the prices into these two broad categories.
+
+This behavior might be due to the inherent limitations of linear regression models in capturing complex, non-linear relationships between the features and the target variable. Additionally, the presence of outliers or skewed data distributions could also contribute to the model's inability to make precise predictions across the entire range of flight prices.
+
+### Decision Tree Testing
 ![decisiontree1](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/1c0c1d39-305e-45b2-b7c6-ffe392f49acc)
 ![decisiontree2](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/68cf5ba0-8cce-4e00-b15a-def5e1e8a11e)
+
+
+For the training set, the RMSE value of 3768.614335146322 indicates that, on average, the model's predictions deviate from the true prices by approximately $3,768. This value is lower than the RMSE for the training set of the linear regression model, suggesting that the Random Forest Regressor is able to better capture the patterns in the training data.
+
+Similarly, for the testing set, the RMSE value of 4126.950091324907 suggests that the model's predictions deviate from the actual prices by around $4,127 on average. While this value is higher than the training set RMSE, it is still lower than the RMSE for the testing set of the linear regression model.
+
+The lower RMSE values for both the training and testing sets indicate that the Random Forest Regressor is performing better than the linear regression model in predicting flight prices. The Random Forest Regressor's ability to capture non-linear relationships and handle complex interactions between features might be contributing to its improved performance.
+
+
+### XG-Boost Tree Testing
 ![xgb_residuals](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/9f6bec51-a0ea-4e56-b300-07a53378e11a)
 ![xgb_feature_importance](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/c1954d74-f8cc-4440-b14c-9208a5d03754)
 ![xgb_pred](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/5205d248-9db9-4f29-9970-3a8062df8198)
+
+The (RMSE) value of the test was 4194.605297728842 for the Random Forest Regressor with XGBoost, it appears that the model's performance is similar to the previous Random Forest Regressor model without XGBoost.
+
+In many cases, the class of travel (business or economy) is one of the primary determinants of flight prices, as business class tickets typically have a significantly higher price point compared to economy class tickets. As shown in the graph, the most important feature is this class which suggests that the model is mainly using the class as a means to predict the price of flights.
+
+### Model Complexities Testing
 ![model_complexities](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/09693fa3-7a1b-4537-a2d0-3ad8e4057991)
 
 ## Discussion
