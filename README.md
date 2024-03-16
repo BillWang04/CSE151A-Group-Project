@@ -40,6 +40,11 @@ Our group performed hyper parameter tuning and K-fold cross validation. For hype
 After evaluating the model, we found that the model is improving but is still ineffective. It’s still underfitting the data. Introducing the non-linearity to our model did help but now we must focus on exploring the data to see if there is still some cleaning to do. Also, this could indicate that we can reexamine our hyper parameter tuning to see if it can be further improved for optimization. 
 
 ### Model 3: Extreme Gradient Boosting Regression
+For our third model, we used Extreme Gradient Boosting Regression. After training our XGBRegressor, we again evaluated its performance using root mean squared error as the metric. The RMSE was around the same as the Random Forest Regressor, with the lowest RMSE achieved being 4192 after some hyperparamter. Hyperparamter tuning was performed using RandomizedSearchCV, with n_estimators, max_depth, and learning_rate being the hyperparamters being tuned with K-fold corss validation of 5 folds. 
+
+##### Conclusion for Model 3:
+
+The lack of improvement in model error shows that we need to possibly choose a completely different kind of model, engineer more meaningful features or train a neural network with varying activation functions to achieve a better predictive tool.
 
 ## Results
 ![linreg_testing](https://github.com/BillWang04/CSE151A-Group-Project/assets/61530252/b0666319-9ef9-45b8-934b-4a8ec8530223)
